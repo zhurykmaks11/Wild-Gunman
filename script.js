@@ -31,6 +31,7 @@ startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
 nextButton.addEventListener('click', nextLevel);
 
+
 function startGame() {
     gameMenu.style.display = 'none';
     gamePanels.style.display = 'block';
