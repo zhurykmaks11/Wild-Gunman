@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "PressStart2P";
+  src: url("fonts/PressStart2P.ttf");
+}
+
+@font-face {
+  font-family: "Digital-7";
+  src: url("fonts/digital-7.ttf");
+}
+
 body {
-  background: black;
+  background: #000;
   font-family: "PressStart2P";
 }
 
@@ -202,7 +212,7 @@ body {
 .time-panel__gunman,
 .time-panel__you {
   font-family: "Digital-7";
-  font-size: 55px;
+  font-size: 65px;
 }
 
 .time-panel__you  {
