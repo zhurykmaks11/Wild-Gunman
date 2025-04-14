@@ -8,7 +8,7 @@ let score;
 
 const startButton = document.querySelector('.button-start-game');
 const restartButton = document.querySelector('.button-restart');
-const nextButton = document.querySelector('.button-net-level');
+const nextButton = document.querySelector('.button-next-level');
 const gameMenu = document.querySelector('.game-menu');
 const wrapper = document.querySelector('.wrapper');
 const gamePanels = document.querySelector('.game-panels');
@@ -137,7 +137,7 @@ function gunmanShootsPlayer() {
         setTimeout(() => {
             sfxShot.play();
             message.classList.remove('message--fire');
-            gameScreen.classList.add('game-screen--death');
+            gameScreen.classList.add('game-screbutton-next-levelen--death');
             message.classList.add('message--dead', 'animated', 'zoomIn');
             message.innerHTML = 'You are dead!';
         }, timeToDuel / 3);

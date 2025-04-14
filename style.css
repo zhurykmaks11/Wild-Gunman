@@ -373,6 +373,61 @@ body {
 }
 
 
+.gunman-level-3 {
+  background: url(img/gunman.png) 0 0;
+  animation: gunman-level-1__walk 1s steps(3) infinite;
+}
+
+.gunman-level-3__standing {
+  background-position: -400px 0;
+}
+
+.gunman-level-3__ready {
+  background-position: -808px 0;
+}
+
+.gunman-level-3__shooting {
+  animation: gunman-level-3__duel 0.5s steps(3);
+  animation-iteration-count: 1;
+  background-position: -940px 0;
+  width: 135px;
+  left: 340px;
+}
+
+.gunman-level-3__death {
+  animation: gunman-level-3__death 1s steps(4);
+  background-position: -1616px 0;
+  width: 128px;
+  left: 340px;
+}
+
+@keyframes gunman-level-3__walk {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -390px 0;
+  }
+}
+
+@keyframes gunman-level-3__duel {
+  from {
+    background-position: -807px 0;
+  }
+  to {
+    background-position: -1212px 0;
+  }
+}
+
+@keyframes gunman-level-3__death {
+  from {
+    background-position: -1212px 0;
+  }
+  to {
+    background-position: -1744px 0;
+  }
+}
+
 .moving {
   left: 340px;
   transition: left 5s linear;
