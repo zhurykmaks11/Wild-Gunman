@@ -374,7 +374,7 @@ body {
 
 .gunman-level-2 {
   background: url(img/gunman.png) 0 -270px;
-  animation: gunman-level-1__walk 1s steps(3) infinite;
+  animation: gunman-level-2__walk 1s steps(3) infinite;
 }
 
 .gunman-level-2__standing {
@@ -386,7 +386,7 @@ body {
 }
 
 .gunman-level-2__shooting {
-  animation: gunman-level-1__duel 0.5s steps(4);
+  animation: gunman-level-2__duel 0.5s steps(4);
   animation-iteration-count: 1;
   background-position: -530px -270px;
   width: 135px;
@@ -394,7 +394,7 @@ body {
 }
 
 .gunman-level-2__death {
-  animation: gunman-level-1__death 1s steps(2);
+  animation: gunman-level-2__death 1s steps(2);
   background-position: -835px -270px;
   width: 128px;
   left: 340px;
