@@ -1,16 +1,16 @@
 @font-face {
   font-family: "PressStart2P";
-  src: url("fonts/PressStart2P.ttf");
+  src: url("../fonts/PressStart2P.ttf");
 }
 
 @font-face {
   font-family: "Digital-7";
-  src: url("fonts/digital-7.ttf");
+  src: url("../fonts/digital-7.ttf");
 }
 
 body {
   background: #000;
-  font-family: "PressStart2P";
+  cursor: url('../img/crosshair.png') 16 16, auto;
 }
 
 /*                              Game menu style                             */
@@ -27,7 +27,7 @@ body {
   width: 800px;
   height: 480px;
 
-  background: url(img/main-background.png) no-repeat;
+  background: url(../img/main-background.png) no-repeat;
 }
 
 .game-menu__title {
@@ -118,7 +118,7 @@ body {
   height: 480px;
   overflow: hidden;
 
-  background: url(img/background-dark.png) no-repeat;
+  background: url(../img/background-dark.png) no-repeat;
   background-size: cover;
 }
 /*                              End Main game screen style                   */
@@ -161,7 +161,7 @@ body {
 .message--fire {
   width: 116px;
   height: 68px;
-  background: url(img/fire-right.png) no-repeat;
+  background: url(../img/fire-right.png) no-repeat;
   left: 60%;
 }
 
@@ -288,7 +288,7 @@ body {
   width: 800px;
   height: 480px;
 
-  background: url(img/main-background.png) no-repeat;
+  background: url(../img/main-background.png) no-repeat;
 }
 
 .win-screen__title {
@@ -318,7 +318,7 @@ body {
 }
 
 .gunman-level-1 {
-  background: url(img/gunman.png) 0 0;
+  background: url(../img/gunman.png) 0 0;
   animation: gunman-level-1__walk 1s steps(3) infinite;
 }
 
@@ -375,7 +375,7 @@ body {
 .gunman-level-2 {
   height: 300px;
   width: 130px;
-  background: url(img/gunman.png) 0 -270px;
+  background: url(../img/gunman.png) 0 -270px;
   animation: gunman-level-2__walk 1s steps(3) infinite;
 }
 
@@ -433,7 +433,7 @@ body {
 .gunman-level-3 {
   height: 320px;
   width: 110px;
-  background: url(img/gunman.png) 0 -578px;
+  background: url(../img/gunman.png) 0 -578px;
   animation: gunman-level-3__walk 1s steps(3) infinite;
 }
 
@@ -491,7 +491,7 @@ body {
 
 .gunman-level-4 {
   height: 260px;
-  background: url(img/gunman.png) 0 -910px;
+  background: url(../img/gunman.png) 0 -910px;
   animation: gunman-level-4__walk 1s steps(3) infinite;
 }
 
@@ -550,7 +550,7 @@ body {
 .gunman-level-5 {
   height: 290px;
   width: 135px;
-  background: url(img/gunman.png) 0 -1170px;
+  background: url(../img/gunman.png) 0 -1170px;
   animation: gunman-level-5__walk 1s steps(3) infinite;
 }
 
@@ -620,9 +620,11 @@ body {
 }
 /*                              Gunman style                                 */
 
+
 .game-screen {
   display: none;
   position: fixed;
+  cursor: url('../img/crosshair.png') 16 16, crosshair;
   left: 50%;
   top: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
