@@ -79,7 +79,8 @@ body {
 }
 
 .button:hover {
-  color: #000;
+  /*color: #000;*/
+  color: white;
 }
 
 .button:active {
