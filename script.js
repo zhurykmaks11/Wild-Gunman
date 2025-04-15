@@ -1,6 +1,6 @@
 'use strict';
 
-let level = 1;
+let level = 2;
 let timeToDuel = 700;
 let readyToDuel = false;
 let time;
