@@ -173,12 +173,12 @@ function playerShootsGunman() {
 function scoreCount() {
     const scoreDiv = document.querySelector('.score-panel__score_num');
     const timeYouValue = +timeYou.innerHTML;
-    const maxTime = +(timeToDuel / 1000).toFixed(2);
-    const temp = +(((maxTime - timeYouValue) * 100 * level).toFixed(0));
+    const maxTime = +(timeToDuel / 1000);
+    const temp = +(((maxTime - timeYouValue) * 100 * level));
 
     (function count() {
         if (+scoreDiv.innerHTML - score < temp) {
-            scoreDiv.innerHTML = +scoreDiv.innerHTML + 100;
+            scoreDiv.innerHTML = +scoreDiv.innerHTML + temp;
             setTimeout(count, 10);
         }
     })();
