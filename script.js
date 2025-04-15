@@ -109,8 +109,8 @@ function prepareForDuel() {
         gunman.classList.add('gunman-level-' + level + '__ready');
         message.classList.add('message--fire');
         gunman.addEventListener('mousedown', playerShootsGunman);
-        timeCounter(Date.now());
         readyToDuel = true;
+        timeCounter(Date.now());
         setTimeout(gunmanShootsPlayer, timeToDuel);
     }, 1000);
 }
@@ -173,8 +173,8 @@ function playerShootsGunman() {
 function scoreCount() {
     const scoreDiv = document.querySelector('.score-panel__score_num');
     const timeYouValue = +timeYou.innerHTML;
-    const maxTime = +(timeToDuel / 1000);
-    const temp = +(((maxTime - timeYouValue) * 100 * level));
+    const maxTime = +(timeToDuel / 1000).toFixed(3);
+    const temp = +(((maxTime - timeYouValue) * 100 * level * level)).toFixed(3);
 
     (function count() {
         if (+scoreDiv.innerHTML - score < temp) {
