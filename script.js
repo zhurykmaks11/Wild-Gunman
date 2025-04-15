@@ -23,20 +23,20 @@ const message = document.querySelector('.message');
 const sfxIntro = new Audio('sfx/intro.m4a');
 const sfxWait = new Audio('sfx/wait.m4a');
 const sfxFire = new Audio('sfx/fire.m4a');
-const sfxShot = new Audio('sfx/shot.m4a');
 const sfxWin = new Audio('sfx/win.m4a');
+const sfxShot = new Audio('sfx/shot.m4a');
 const sfxDeath = new Audio('sfx/death.m4a');
 
 startButton.addEventListener('click', startGame);
-restartButton.addEventListener('click', restartGame);
 nextButton.addEventListener('click', nextLevel);
+restartButton.addEventListener('click', restartGame);
 
 
 function startGame() {
     gameMenu.style.display = 'none';
+    wrapper.style.display = 'block';
     gamePanels.style.display = 'block';
     gameScreen.style.display = 'block';
-    wrapper.style.display = 'block';
     timeGunman.innerHTML = (timeToDuel / 1000).toFixed(2);
     timeYou.innerHTML = (0).toFixed(2);
     score = +document.querySelector('.score-panel__score_num').innerHTML;
@@ -52,8 +52,8 @@ function restartGame() {
     sfxDeath.pause();
     restartButton.style.display = 'none';
     message.innerHTML = '';
-    gameScreen.classList.remove('game-screen--death');
     message.classList.remove('message--dead', 'animated', 'zoomIn');
+    gameScreen.classList.remove('game-screen--death');
     gunman.classList.remove(
         'gunman-level-' + level,
         'gunman-level-' + level + '__standing',
@@ -80,17 +80,17 @@ function nextLevel() {
         startGame();
     } else {
         message.style.display = 'none';
-        gameScreen.style.display = 'none';
         gamePanels.style.display = 'none';
+        gameScreen.style.display = 'none';
         winScreen.style.display = 'block';
     }
 }
 
 function moveGunman() {
     setTimeout(() => {
-        gunman.classList.add('moving');
         sfxIntro.play();
         sfxIntro.loop = true;
+        gunman.classList.add('moving');
     }, 50);
 }
 
@@ -105,9 +105,9 @@ function prepareForDuel() {
 
     setTimeout(() => {
         sfxWait.pause();
+        sfxFire.play();
         gunman.classList.add('gunman-level-' + level + '__ready');
         message.classList.add('message--fire');
-        sfxFire.play();
         gunman.addEventListener('mousedown', playerShootsGunman);
         readyToDuel = true;
         timeCounter(Date.now());
@@ -137,9 +137,9 @@ function gunmanShootsPlayer() {
         setTimeout(() => {
             sfxShot.play();
             message.classList.remove('message--fire');
-            gameScreen.classList.add('game-screbutton-next-levelen--death');
             message.classList.add('message--dead', 'animated', 'zoomIn');
             message.innerHTML = 'You are dead!';
+            gameScreen.classList.add('game-screbutton-next-levelen--death');
         }, timeToDuel / 3);
 
         gunman.removeEventListener('mousedown', playerShootsGunman);
@@ -155,11 +155,11 @@ function playerShootsGunman() {
     if (readyToDuel) {
         readyToDuel = false;
         sfxShot.play();
+        sfxWin.play();
         message.classList.remove('message--fire');
         gunman.classList.remove('standing', 'gunman-level-' + level + '__shooting');
         gunman.classList.add('gunman-level-' + level + '__death');
         gunman.removeEventListener('mousedown', playerShootsGunman);
-        sfxWin.play();
 
         setTimeout(() => {
             message.classList.add('message--win', 'animated', 'zoomIn');
@@ -173,12 +173,12 @@ function playerShootsGunman() {
 function scoreCount() {
     const scoreDiv = document.querySelector('.score-panel__score_num');
     const timeYouValue = +timeYou.innerHTML;
-    const maxTime = +(timeToDuel / 1000).toFixed(2);
-    const temp = +(((maxTime - timeYouValue) * 100 * level).toFixed(0));
+    const maxTime = +(timeToDuel / 1000).toFixed(3);
+    const temp = +(((maxTime - timeYouValue) * 100 * level * level)).toFixed(3);
 
     (function count() {
         if (+scoreDiv.innerHTML - score < temp) {
-            scoreDiv.innerHTML = +scoreDiv.innerHTML + 100;
+            scoreDiv.innerHTML = +scoreDiv.innerHTML + temp;
             setTimeout(count, 10);
         }
     })();
